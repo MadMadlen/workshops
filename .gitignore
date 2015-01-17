@@ -6,6 +6,7 @@
 /tmp
 
 /coverage
+/.idea
 
 public/tmp
 public/uploads
