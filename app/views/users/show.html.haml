@@ -27,10 +27,10 @@
       %th Content
       %th Date
 
-    - user.reviews.each do |review|
+    - @reviews.each do |review|
       %tr
         %td= review.rating
         %td= review.content
-        %td= review.created_at
+        %td= review.created_at.strftime("%d/%m/%y")
 
 = link_to 'Back', root_path, class: 'btn btn-primary'
