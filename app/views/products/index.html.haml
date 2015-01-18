@@ -1,6 +1,6 @@
-%h1 Listing products
+%h1 Products
 
-%table
+%table.table
   %tr
     %th Title
     %th Description
@@ -15,9 +15,10 @@
       %td= product.description
       %td= product.price
       %td= link_to 'Show', category_product_path(product.category, product)
-      = if product.user == current_user
-        - binding.pry
+      - if product.user == current_user
         %td= link_to 'Edit', edit_category_product_path(product.category, product)
         %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
+
+= link_to 'Back', categories_path, class: 'btn btn-primary'

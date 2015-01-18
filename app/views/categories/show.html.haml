@@ -1,19 +1,19 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b Category name:
   = category.name
 
 %p
   - category.products.each do |product|
     = link_to product.title, category_product_path(category, product)
+    <br>
 
 %p
-  = if user_signed_in?
+  - if user_signed_in?
     %h3 New product
     = render 'products/form'
 
-= if current_user.try(:admin?)
-  = link_to 'Edit', edit_category_path(category)
-  \|
+= link_to 'Edit', edit_category_path(category)
+\|
 = link_to 'Back', categories_path, class: 'btn btn-primary'

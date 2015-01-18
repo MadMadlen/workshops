@@ -1,1 +1,61 @@
 @import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: #BDD8DA;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 50%;
+  td {
+    font-size: 13px;
+  }
+  th {
+    font-size: 12px;
+  }
+}
+
+p {
+  font-size: 16px;
+  color: #343434;
+}
+
+h3 {
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.navbar-default {
+  background-color: #7D9C9F;
+  border-color: #7DA8AD;
+  .navbar-brand {
+    color: rgba(144, 19, 76, 0.91);
+  }
+  .navbar-text {
+    color: #ffffff;
+  }
+}
+
+.form-control {
+  width: 50%
+}
