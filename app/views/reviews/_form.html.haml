@@ -12,5 +12,6 @@
     = f.input :rating, collection: 1..5, class: 'form-control'
   .form-group
     = f.hidden_field :user_id, value: current_user.try(:id)
+  .form-group
 
   = f.submit 'Save', class: 'btn btn-default'

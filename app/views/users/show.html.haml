@@ -1,0 +1,36 @@
+%p#user
+
+%p
+  %b
+  = user.firstname + "'s profile"
+
+  %table.table
+    %tr
+      %th Name
+      %td
+        = user.firstname
+    %tr
+      %th Email
+      %td
+        = user.email
+    %tr
+      %th Last sign in at
+      %td
+        = user.last_sign_in_at
+%p
+  %b
+  = user.firstname + "'s reviews"
+
+  %table.table
+    %tr
+      %th Rating
+      %th Content
+      %th Date
+
+    - user.reviews.each do |review|
+      %tr
+        %td= review.rating
+        %td= review.content
+        %td= review.created_at
+
+= link_to 'Back', root_path, class: 'btn btn-primary'
