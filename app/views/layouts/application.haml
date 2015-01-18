@@ -14,8 +14,19 @@
         .navbar-header
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
-          Links should go here
+          - if user_signed_in?
+            Hello,
+            = current_user.firstname
+            = link_to 'Log out', destroy_user_session_path, method: :delete
+            or
+            = link_to 'Edit profile', edit_user_registration_path
+          - else
+            You are not logged in,
+            = link_to 'Sign in', new_user_session_path
+            or
+            = link_to 'Sign up', new_user_registration_path
     .container-fluid
       .row
         .col-lg-12
           = yield
+

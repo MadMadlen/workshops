@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   expose(:review) { Review.new }
   expose_decorated(:reviews, ancestor: :product)
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :check_if_owner, only: [:edit, :update, :destroy]
 
   def index
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :category_id)
+    params.require(:product).permit(:title, :description, :price, :category_id, :user_id)
   end
 
   def check_if_owner
